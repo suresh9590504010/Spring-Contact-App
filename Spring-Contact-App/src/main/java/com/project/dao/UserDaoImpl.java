@@ -25,7 +25,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	m.put("phone", u.getPhone());
 	m.put("email", u.getEmail());
 	m.put("address", u.getAddress());
-	m.put("loginName", u.getAddress());
+	m.put("loginName", u.getLoginName());
 	m.put("password", u.getPassword());
 	m.put("role", u.getRole());
 	m.put("loginStatus", u.getLoginStatus());
@@ -40,18 +40,33 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	}
 
 	public void update(User u) {
-		// TODO Auto-generated method stub
+		
+		String sql="update user" + " set name=:name," + "phone=:phone,"
+		+ "email=:email, "+ "address=:address," + "role=:role," + "loginStatus=:loginStatus "
+				+ "where userid=:userid ";
+		
+		Map m=new HashMap();
+		
+		m.put("name", u.getName());
+		m.put("phone", u.getPhone());
+		m.put("email", u.getEmail());
+		m.put("address", u.getAddress());
+		m.put("role", u.getRole());
+		m.put("loginStatus", u.getLoginStatus());
+		m.put("userid", u.getUserid());
+		
+		getNamedParameterJdbcTemplate().update(sql, m);
 		
 	}
 
 	public void delete(User u) {
-		// TODO Auto-generated method stub
+		this.delete(u.getUserid());
 		
 	}
 
 	public void delete(Integer userid) {
-		// TODO Auto-generated method stub
-		
+		String sql="delete from user where userid=?";
+		getJdbcTemplate().update(sql, userid);
 	}
 
 	public User findById(Integer userid) {
