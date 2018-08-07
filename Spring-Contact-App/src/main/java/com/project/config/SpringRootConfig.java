@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = {"com.project"})
+@ComponentScan(basePackages = {"com.project.dao"})
 public class SpringRootConfig {
 
 	//Database,Services,etc....

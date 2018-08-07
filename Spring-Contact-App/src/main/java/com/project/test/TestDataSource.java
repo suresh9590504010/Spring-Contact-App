@@ -18,9 +18,11 @@ DataSource ds=ctx.getBean(DataSource.class);
 JdbcTemplate jt=new JdbcTemplate(ds);
 String sql="insert into user(name, phone, email, address, loginName, password) values(?,?,?,?,?,?)";
 	
-Object[] param=new Object[] {"suresh","9590504010","suresh@123","bangalole","www","www1"};
+Object[] param=new Object[] {"umesh","9580504010","umesh@123","chikodi","ddd","ddd1"};
 
 jt.update(sql, param);
+
+
 
 System.out.println("sql executed");
 
