@@ -14,6 +14,7 @@ public Contact mapRow(ResultSet rs, int i) throws SQLException {
 		
 	Contact c=new Contact();
 	c.setContactId(rs.getInt("contactId"));
+	c.setUserId(rs.getInt("userid"));
 	c.setName(rs.getString("name"));
 	c.setPhone(rs.getString("phone"));
 	c.setEmail(rs.getString("email"));

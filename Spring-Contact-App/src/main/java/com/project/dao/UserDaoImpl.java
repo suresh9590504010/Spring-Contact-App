@@ -18,7 +18,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
 	public void save(User u) {
 	
-	String sql="insert into user(name,phone, email, address, loginName, password,role,loginStatus)"
+	String sql="insert into user(name, phone, email, address, loginName, password,role,loginStatus)"
 		
 			+ "values(:name, :phone, :email, :address, :loginName, :password, :role, :loginStatus)";
 	Map m=new HashMap();

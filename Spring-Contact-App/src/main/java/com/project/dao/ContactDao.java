@@ -12,7 +12,7 @@ public interface ContactDao {
 	public void update(Contact C);
 	public void delete(Contact C);
 	public void delete(Integer contactid);
-	public User findById(Integer contactid);
+	public Contact findById(Integer contactid);
 	public List<Contact> findAll();
 	public List<Contact> findByProperty(String propName, Object propValue);
 }
